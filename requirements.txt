@@ -1,0 +1,5 @@
+Flask==0.10.1
+gunicon==19.9.0
+vitualenv==15.1.0
+Jinja2==2.7.2
+Werkzeug==0.9.4

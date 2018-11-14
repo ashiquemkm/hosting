@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'layout.html' %}
+
+{% block mycontent %}
+<h1 style="margin-top: 50px">MKM Employees</h1>
+
+{% for employee in myemployeest %}
+
+<ul class="list-group" style="margin-top: 20px">
+    <li class="list-group-item active">
+        <b>{{employee.id}} : {{employee.name}}</b><br>
+    </li>
+</ul>
+<ul>
+    <br/><li class="list-group-item list-group-item-info">
+        {{employee.name}}
+    </li>
+    <li class="list-group-item list-group-item-info">
+        {{employee.pace}}
+    </li>
+    <li class="list-group-item list-group-item-info">
+        {{employee.mobile}}
+    </li>
+    <li class="list-group-item list-group-item-info">
+        {{employee.email}}
+    </li>
+    <li class="list-group-item list-group-item-info">
+        {{employee.joioneddate}}
+    </li>
+    {% if employee.salary >= 10000 %}
+
+    <li class="list-group-item list-group-item-success">
+        {{employee.salary}}
+    </li>
+
+    {% else %}
+    
+    <li class="list-group-item list-group-item-danger">
+        {{employee.salary}}
+    </li>
+
+    {% endif %}
+</ul> 
+
+
+{% endfor %}
+{% endblock %}
+</body>
+</html>
